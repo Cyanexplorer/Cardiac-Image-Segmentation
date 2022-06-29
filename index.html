@@ -1,0 +1,459 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <title>心臟圖像分割法表面網格建模系統</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.lp.css">
+    <link rel="stylesheet" type="text/css" href="css/landing-page.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" type="text/css" href="css/styleTest.css">
+</head>
+
+<body>
+    <canvas id="live2d" width="300" height="600" style="position:fixed;bottom:0;right:0"></canvas>
+
+    <!----------------------------------- Dividing line----------------------------------------------------->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand topnav" href="https://myweb.ntut.edu.tw/~tjhsieh/">
+                    ♪ 國立臺北科技大學 ♪ 資訊工程系 ♪ 計算機圖學實驗室 ♪</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#top">回頂端</a>
+                    </li>
+                    <li>
+                        <a href="#demo1">摘要</a>
+                    </li>
+                    <li>
+                        <a href="#demo2">引用文獻</a>
+                    </li>
+                    <li>
+                        <a href="#demo3">示範</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="top"></a>
+    <div class="intro-header">
+        <div class="container" style="height:350px;">
+
+            <div class="row">
+                <div class="col-lg-12" style="height:300px;">
+                    <div class="intro-message" style="position: relative;padding-top: 0%;padding-bottom: 70%;">
+                        <h1>心臟圖像分割法表面網格建模系統</h1>
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="https://20.84.80.58:3000/" class="btn btn-default btn-lg">
+                                    <span class="network-name" style="font-weight: 900;">進入系統</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+    <a name="demo1"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <h2 class="section-heading">摘要</h2>
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+
+                    <div class="clearfix"></div>
+
+                    <p class="lead">醫學影像的3D 視覺化能夠重建人體的內部構造，結合等值立方法和3D
+                        列印技術，在現實中製作器官模型，協助診療者研究病情，或向病患展示
+                        以增進當事人對病情的認知程度。實際應用上，因應不同器官組織的複雜
+                        程度，心臟的斷層掃描影像轉換前需要進行詳細標記，且該階段以手動操
+                        作會相當耗時，需要結合不同的方法輔助，以降低標記所需的時間與技術
+                        門檻。研究成果會以自行開發的網頁系統呈現，並將處理流程分3 個階段:
+                        以影像處理為主的前處理流程，採用直方圖均衡化和三維的CLAHE 演算法
+                        處理影像細節；以圖像分割為主的中處理流程，透過影像的二值化、區塊
+                        擴張...... 等方法在樣板上標記心臟的位置，並結合體積投影演算法預測建
+                        模後的樣貌；建模和模型列印為主的後處理流程，該階段根據樣板的標記，
+                        以等值立方法產生心臟表面網格模型，再用噴射3D 印表機製作實物。</p>
+                </div>
+                <div class="col-lg-6 col-lg-offset-1 col-sm-6 d-flex">
+                    <div style="border: 30px solid grey;border-radius:10px;width:100%;">
+                        <video class="w-100" controls>
+                            <source src="video/video.mov" type="video/mp4">
+                            Your brower does not support the video tag.
+                        </video>
+                    </div>
+                    <div style="background-color: lightgrey;width:10%;height:50px;"></div>
+                    <div style="background-color: grey;width:30%;height:20px;"></div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <a name="demo2"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <h2 class="section-heading">引用文獻</h2>
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+
+                    <div class="clearfix"></div>
+
+                    <p class="lead">
+                        等值立方法
+                        <hr>
+                        是一種能夠將影像轉換成3D模型的技術，利用特殊結構的體素
+                        (Voxel) 對立體影像做侵蝕運算，瞄準器官的邊緣插值產生頂點形成網格。執行的過程中，影像的色階變化會視為等值線，
+                        以利於精確標記侵蝕的基準，之後利用體素與等值線的交互情形來決定生成在邊界上
+                        的點的位置。當
+                        計算完成後，再渲染成三維模型。<br>
+                        等值立方法在選擇侵蝕基準的過程被稱為影像的二值化，而決定等直線位置的參數
+                        則被稱為閥值。二值化挑選的閥值的方法可分為手動閥值與自適應閥值。在一些特定
+                        的場合，為了快速劃分出影像中的重點區域，由Otsu所開發的大津二值化演算法能
+                        夠依據影像內容自動調整閥值大小，將影像區分為‘前景’ 與‘背景’，其做法藉由計算
+                        不同閥值下的前景區塊與背景區塊，其類間變異數和類內變異數的變化，以選取適當
+                        的分類位置。
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/fps_normal2.jpg" alt="">
+                </div>
+
+                <div class="col-lg-5 col-sm-6">
+
+                    <div class="clearfix"></div>
+
+                    <p class="lead">
+                        圖像分割法
+                        <hr>
+                        主要用於影像內容標記分類。當影像中包含的資訊過於複雜，可選擇性過濾指定的類別以降低
+                        干擾。該方法在應用上會採取多種不同的流程，例如手動標記內容、樣板的編
+                        輯與分割、影像的二值化與部分範圍的擴張選取...... 等。<br>
+                        遞移函式在圖像分割中能夠將斷層掃描影像的訊號轉換至不同的色彩空間，提
+                        升資料的閱讀性，結合立體渲染在三維空間找尋目標區域。一維的遞移函式以訊號的強
+                        度作為轉換的基準，以色彩圖透過不同的顏色分類訊號的強度，而二維的遞移函式則
+                        在此之上加入其他轉換條件: 影像的梯度向量變化或是尺寸特徵，以便應用於更多的情
+                        形。
+                    </p>
+                </div>
+
+                <div class="slide col-lg-5 col-lg-offset-2 col-sm-6" data-timestep="3">
+                    <img class="img-responsive" src="img/threshold_auto.jpg" alt="">
+                    <img class="img-responsive disappear" src="img/threshold_manual.jpg" alt="">
+                    <img class="img-responsive disappear" src="img/volume_normal.jpg" alt="">
+                </div>
+
+                <div class="col-lg-5 col-sm-6">
+
+                    <div class="clearfix"></div>
+
+                    <p class="lead">
+                        立體渲染
+                        <hr>
+                        電腦斷層掃描影像在資料的結構上為三維陣列(長、寬、高)，可以使用射線投影法，在三維空間中紀錄特定視角下的樣貌，結合影像的閥值或是最大密度投影等方法，限制輸出範圍。
+                        過程中，記錄到的內容會做為紋理繪製至立方體模型上，產生視覺化的效果。紋理構成的圖像，其模型的3D結構並非實際的建模，在醫學上可用於快速還原圖像中的生理構造。
+                    </p>
+                </div>
+
+                <div class="slide col-lg-5 col-lg-offset-2 col-sm-6" data-timestep="3">
+                    <img class="img-responsive" src="img/volumeResult.jpg" alt="">
+                    <img class="img-responsive disappear" src="img/tf_origin2.jpg" alt="">
+                    <img class="img-responsive disappear" src="img/tf_colormap2.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <a name="demo3"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <hr class="section-heading-spacer">
+
+            <h2 class="section-heading">示範</h2>
+            <div class="row">
+                <div class="clearfix"></div>
+                <div class="col-lg-5 col-sm-6">
+
+                    <p class="lead">
+                        Step1
+                    <ol>
+                        <li>
+                            上傳DICOM/RAW/NRRD​
+                        </li>
+                        <li>
+                            在新視窗開啟檔案​
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 slide">
+                    <img class="img-responsive" src="img/Step1-1.png" alt="">
+                    <img class="img-responsive" src="img/Step1-2.png" alt="">
+                    <img class="img-responsive" src="img/Step1-3.png" alt="">
+                    <img class="img-responsive" src="img/Step1-4.png" alt="">
+                </div>
+
+                <div class="col-lg-5 col-sm-6">
+
+                    <p class="lead">
+                        Step2
+                    <ol>
+                        <li>
+                            根據需求調整影像訊號分布
+                        </li>
+                        <li>
+                            剪裁影像
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 slide">
+                    <img class="img-responsive" src="img/Step2-1.png" alt="">
+                    <img class="img-responsive" src="img/Step2-2.png" alt="">
+                </div>
+
+                <div class="col-lg-5 col-sm-6">
+
+                    <p class="lead">
+                        Step3
+                    <ol>
+                        <li>
+                            <p>生成新的Segment​​</p>
+                        </li>
+                        <li>
+                            <p>切換控制面板，由Image(影像處理)切換至Segment(樣板編輯)​</p>
+                        </li>
+                        <li>
+                            <p>使用下列工具分割圖像​</p>
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 slide">
+                    <img class="img-responsive" src="img/Step3-1.png" alt="">
+                    <img class="img-responsive" src="img/Step3-2.png" alt="">
+                    <img class="img-responsive" src="img/Step3-3.png" alt="">
+                </div>
+
+                <div class="col-lg-5 col-sm-6">
+
+                    <p class="lead">
+                        Step4
+                    <ol>
+                        <li>
+                            <p>再次切換控制面板，由Segment(樣板編輯)切換至Model(模型生成)​</p>
+                        </li>
+                        <li>
+                            <p>選擇"Generate Model"</p>
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 slide">
+                    <img class="img-responsive" src="img/Step4-1.png" alt="">
+                    <img class="img-responsive" src="img/Step4-2.png" alt="">
+                    <img class="img-responsive" src="img/Step4-3.jpg" alt="">
+                </div>
+
+                <div class="col-lg-5 col-sm-6">
+
+                    <p class="lead">
+                        Step5
+                    <ol>
+                        <li>
+                            <p>設定以STL格式或是PLY格式輸出</p>
+                        </li>
+                        <li>
+                            <p>選擇​“Download Model”​</p>
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 slide">
+                    <img class="img-responsive" src="img/Step5-1.png" alt="">
+                    <img class="img-responsive" src="img/Step5-2.png" alt="">
+                </div>
+
+
+                <hr class="section-heading-spacer">
+
+
+                <div class="slide col-lg-12 col-sm-12" data-timestep="5">
+                    <img class="img-responsive" src="img/webPage1.jpg" alt="">
+                    <img class="img-responsive" src="img/webPage2.jpg" alt="">
+                    <img class="img-responsive" src="img/webPage3.jpg" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <hr>
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small"><a rel="license"
+                            href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款"
+                                style="border-width:0"
+                                src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><span
+                            xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource"
+                            property="dct:title" rel="dct:type"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small">
+                        心臟圖像分割法表面網格建模系統
+
+                        由<a xmlns:cc="http://creativecommons.org/ns#" href="http://www.cc.ntut.edu.tw/~tjhsieh/"
+                            property="cc:attributionName" rel="cc:attributionURL">國立臺北科技大學資訊工程系計算機圖學實驗室</a>製作，
+                        以<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用CC 姓名標示-非商業性-相同方式分享
+                            4.0 國際 授權條款</a>釋出。
+                        姓名標示-非商業性-相同方式分享 CC BY-NC-SA
+                        本授權條款允許使用者對本著作進行重混、調整，以及依原著作建立新著作，但僅限於非商業目的之使用。唯使用者就其新創著作，必須按照表彰
+                        原作：國立臺北科技大學資訊工程系計算機圖學實驗室，並且將產出之新創著作採用相同的授權條款釋出。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="Core/live2dcubismcore.js"></script>
+    <script src="dist/bundle.js"></script>
+    <!-- jQuery -->
+    <script src="lib/jquery-2.1.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        let clickEvent = new Event('change')
+
+        window.addEventListener('load',()=>{
+
+            let slides = document.getElementsByClassName('slide')
+
+            for (let j = 0; j < slides.length; j++) {
+                let slide = slides[j]
+                let imgs = slide.querySelectorAll('img')
+                let focus = 0
+
+                let timestep = 5000
+
+                if (slide.dataset.timestep == '3') {
+                    timestep = 3000
+                }
+
+                let selector = document.createElement('form')
+                selector.classList.add('selector')
+
+                let maxHeight = 0
+                let maxWidth = 0
+                for (let i = 0; i < imgs.length; i++) {
+                    if(imgs[i].clientHeight > maxHeight){
+                        maxHeight = imgs[i].clientHeight
+                    }
+                    if(imgs[i].clientWidth > maxWidth){
+                        maxWidth = imgs[i].clientWidth
+                    }
+                }
+                slide.style.height = maxHeight + 'px'
+
+                for (let i = 0; i < imgs.length; i++) {
+                    let dot = document.createElement('input')
+                    dot.type = 'radio'
+                    dot.name = 'radioGroup' + j
+                    dot.value = i
+                    selector.append(dot)
+
+                    if (i == focus) {
+                        dot.checked = true
+                    }
+                    else{
+                        imgs[i].classList.add('disappear')
+                    }
+
+                    imgs[i].style.width = '100%'
+                }
+
+                selector.addEventListener('change', (evt) => {
+                    imgs[focus].classList.add('disappear')
+                    focus = parseInt(evt.target.value)
+                    imgs[focus].classList.remove('disappear')
+                })
+
+                slide.appendChild(selector)
+
+                setInterval(() => {
+                    selector.children[focus].checked = false
+                    imgs[focus].classList.add('disappear')
+                    focus = (focus + 1) % imgs.length
+                    selector.children[focus].checked = true
+                    imgs[focus].classList.remove('disappear')
+                }, timestep)
+            }
+        })
+
+
+
+
+        
+    </script>
+        
+</body>
+
+</html>
