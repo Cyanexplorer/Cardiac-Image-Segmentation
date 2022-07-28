@@ -109,12 +109,25 @@
                         以等值立方法產生心臟表面網格模型，再用噴射3D 印表機製作實物。</p>
                 </div>
                 <div class="col-lg-6 col-lg-offset-1 col-sm-6 d-flex">
-                    <div style="border: 30px solid grey;border-radius:10px;width:100%;">
-                        <video class="w-100" controls>
-                            <source src="video/video.mp4" type="video/mp4">
+                    <div style="border: 30px solid grey;border-radius:10px;width:100%; position: relative;">
+                        <video id="video_controller" class="w-100" controls>
+                            <source id="intro_video" src="video/video.mp4" type="video/mp4">
                             Your brower does not support the video tag.
                         </video>
+                        <div style="position: absolute;right:0px; bottom:-30px;color:white">
+                            <label>
+                                <input type="radio" name="language" value="CHT" checked>
+                                CHT
+                            </label>
+                            <label>
+                                <input type="radio" name="language" value="ENG">
+                                ENG
+                            </label>
+
+                        </div>
                     </div>
+
+
                     <div style="background-color: lightgrey;width:10%;height:50px;"></div>
                     <div style="background-color: grey;width:30%;height:20px;"></div>
                 </div>
@@ -383,7 +396,23 @@
 
         let clickEvent = new Event('change')
 
-        window.addEventListener('load',()=>{
+        window.addEventListener('load', () => {
+
+            let vlanguages = document.getElementsByName('language')
+            let videoSource = document.getElementById('intro_video')
+            let videoController = document.getElementById('video_controller')
+
+            vlanguages[0].addEventListener('click', () => {
+                videoController.pause()
+                videoSource.src = "video/video.mp4"
+                videoController.load()
+            })
+
+            vlanguages[1].addEventListener('click', () => {
+                videoController.pause()
+                videoSource.src = "video/siggraph.mp4"
+                videoController.load()
+            })
 
             let slides = document.getElementsByClassName('slide')
 
@@ -404,10 +433,10 @@
                 let maxHeight = 0
                 let maxWidth = 0
                 for (let i = 0; i < imgs.length; i++) {
-                    if(imgs[i].clientHeight > maxHeight){
+                    if (imgs[i].clientHeight > maxHeight) {
                         maxHeight = imgs[i].clientHeight
                     }
-                    if(imgs[i].clientWidth > maxWidth){
+                    if (imgs[i].clientWidth > maxWidth) {
                         maxWidth = imgs[i].clientWidth
                     }
                 }
@@ -423,7 +452,7 @@
                     if (i == focus) {
                         dot.checked = true
                     }
-                    else{
+                    else {
                         imgs[i].classList.add('disappear')
                     }
 
@@ -451,9 +480,9 @@
 
 
 
-        
+
     </script>
-        
+
 </body>
 
 </html>
